@@ -144,103 +144,8 @@
       <main class="${properties.kcLoginMain!}">
         <div class="${properties.kcLoginMainHeader!}">
           <h1 class="${properties.kcLoginMainTitle!}" id="kc-page-title"><#nested "header"></h1>
-          <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
-          <div class="${properties.kcLoginMainHeaderUtilities!}">
-            <div class="${properties.kcInputClass!}">
-              <select
-                aria-label="${msg("languages")}"
-                id="login-select-toggle"
-                onchange="if (this.value) window.location.href=this.value"
-              >
-                <#list locale.supported?sort_by("label") as l>
-                  <option
-                    value="${l.url}"
-                    ${(l.languageTag == locale.currentLanguageTag)?then('selected','')}
-                  >
-                    ${l.label}
-                  </option>
-                </#list>
-              </select>
-              <span class="${properties.kcFormControlUtilClass}">
-                <span class="${properties.kcFormControlToggleIcon!}">
-                  <svg
-                    class="pf-v5-svg"
-                    viewBox="0 0 320 512"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    role="img"
-                    width="1em"
-                    height="1em"
-                  >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    >
-                    </path>
-                  </svg>
-                </span>
-              </span>
-            </div>
-          </div>
-          </#if>
         </div>
         <div class="${properties.kcLoginMainBody!}">
-          <#if !(auth?has_content && auth.showUsername() && !auth.showResetCredentials())>
-              <#if displayRequiredFields>
-                  <div class="${properties.kcContentWrapperClass!}">
-                      <div class="${properties.kcLabelWrapperClass!} subtitle">
-                          <span class="${properties.kcInputHelperTextItemTextClass!}">
-                            <span class="${properties.kcInputRequiredClass!}">*</span> ${msg("requiredFields")}
-                          </span>
-                      </div>
-                  </div>
-              </#if>
-          <#else>
-              <#if displayRequiredFields>
-                  <div class="${properties.kcContentWrapperClass!}">
-                      <div class="${properties.kcLabelWrapperClass!} subtitle">
-                          <span class="${properties.kcInputHelperTextItemTextClass!}">
-                            <span class="${properties.kcInputRequiredClass!}">*</span> ${msg("requiredFields")}
-                          </span>
-                      </div>
-                      <div class="${properties.kcFormClass} ${properties.kcContentWrapperClass}">
-                          <#nested "show-username">
-                          <@username />
-                      </div>
-                  </div>
-              <#else>
-                  <div class="${properties.kcFormClass} ${properties.kcContentWrapperClass}">
-                    <#nested "show-username">
-                    <@username />
-                  </div>
-              </#if>
-          </#if>
-
-          <#-- App-initiated actions should not see warning messages about the need to complete the action -->
-          <#-- during login.                                                                               -->
-          <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
-              <div class="${properties.kcAlertClass!} pf-m-${(message.type = 'error')?then('danger', message.type)}">
-                  <div class="${properties.kcAlertIconClass!}">
-                      <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-                      <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-                      <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
-                      <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-                  </div>
-                  <span class="${properties.kcAlertTitleClass!} kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
-              </div>
-          </#if>
-
-          <#nested "form">
-
-          <#if auth?has_content && auth.showTryAnotherWayLink()>
-            <form id="kc-select-try-another-way-form" action="${url.loginAction}" method="post" novalidate="novalidate">
-                <input type="hidden" name="tryAnotherWay" value="on"/>
-                <a id="try-another-way" href="javascript:document.forms['kc-select-try-another-way-form'].requestSubmit()"
-                    class="${properties.kcButtonSecondaryClass} ${properties.kcButtonBlockClass} ${properties.kcMarginTopClass}">
-                      ${kcSanitize(msg("doTryAnotherWay"))?no_esc}
-                </a>
-            </form>
-          </#if>
-
             <div class="${properties.kcLoginMainFooter!}">
                 <#nested "socialProviders">
 
@@ -263,31 +168,18 @@
   <footer id="footer">
     <ul>
       <li>
-        <img src="${url.resourcesPath}/img/euFundedLogo.png" id="eu-funded-logo" alt="EU funded logo" />
-      </li>
-      <li>
-        <a href="https://dissco.eu"
-            target="_blank"
-            rel="noreferer"
-        >
-            <p className="fs-5 tc-accent">Distributed System of Scientific Collections</p>
-        </a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a href="https://disscover.dissco.eu/acknowledgements" target="_blank" rel="noreferrer">
-          <p className="fs-5">Acknowledgements</p>
+        <a href="${url.resourcesPath}/pages/privacy-static.html" target="_blank" rel="noreferrer">
+          <p className="fs-5">Privacy statement</p>
         </a>
       </li>
       <li>
-        <a href="https://disscover.dissco.eu/privacy" target="_blank" rel="noreferrer">
-          <p className="fs-5">Privacy</p>
+        <a href="${url.resourcesPath}/pages/terms-static.html" target="_blank" rel="noreferrer">
+          <p className="fs-5">Terms of use</p>
         </a>
       </li>
       <li>
-        <a href="https://disscover.dissco.eu/terms" target="_blank" rel="noreferrer">
-          <p className="fs-5">Terms</p>
+        <a href="mailto:support@dissco.jitbit.com">
+          <p className="fs-5">Get support</p>
         </a>
       </li>
     </ul>
