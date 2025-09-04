@@ -116,7 +116,7 @@
         link.setAttribute("aria-disabled", "true");
       });
     </script>
-      <#if authenticationSession?has_content>
+      <#if authenticationSession?has_content && authenticationSession.authSessionIdHash?has_content>
         <script type="module">
           import { checkAuthSession } from "${url.resourcesPath}/js/authChecker.js";
 
