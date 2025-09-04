@@ -150,7 +150,7 @@
               <#nested "socialProviders">
 
               <#if displayInfo>
-                <div id="kc-info" class="${properties.kcLoginMainFooterBand!} ${properties.kcFormClass}">
+                <div id="kc-info" class="${properties.kcLoginMainFooterBand!} ${properties.kcFormClass!}">
                   <div id="kc-info-wrapper" class="${properties.kcLoginMainFooterBandItem!}">
                       <#nested "info">
                   </div>
