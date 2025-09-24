@@ -1,6 +1,8 @@
 <#import "template.ftl" as layout>
 <#import "user-profile-commons.ftl" as userProfileCommons>
 <@layout.registrationLayout displayMessage=messagesPerField.exists('global') displayRequiredFields=true; section>
+<!-- template: idpReviewUserProfile.ftl -->
+
     <#if section = "header">
         ${msg("loginIdpReviewProfileTitle")}
     <#elseif section = "form">
