@@ -24,7 +24,7 @@
 
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false>
   <!DOCTYPE html>
-  <html class="${properties.kcHtmlClass!}" lang="${lang!}"<#if realm.internationalizationEnabled> dir="${(locale.rtl)?then('rtl','ltr')}"</#if>>
+  <html class="${properties.kcHtmlClass!} test-class" lang="${lang!}"<#if realm.internationalizationEnabled> dir="${(locale.rtl)?then('rtl','ltr')}"</#if>>
 
   <head>
     <meta charset="utf-8">
