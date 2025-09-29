@@ -4,6 +4,7 @@
 <!-- template: idpReviewUserProfile.ftl -->
 
     <#if section = "header">
+      <p>This is a test</p>
         ${msg("loginIdpReviewProfileTitleSuperTest")}
     <#elseif section = "form">
       <form id="kc-idp-review-profile-form" class="${properties.kcFormClass!}"
