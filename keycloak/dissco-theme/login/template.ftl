@@ -159,6 +159,8 @@
           </div>
         </div>
 
+        <#nested "form">
+
         <div class="${properties.kcLoginMainFooter!}">
             <@loginFooter.content/>
         </div>
