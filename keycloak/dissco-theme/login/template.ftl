@@ -84,7 +84,7 @@
     </#if>
 </head>
 
-<body id="keycloak-bg" class="${properties.kcBodyClass!}" data-page-id="login-${pageId}">
+<body id="keycloak-bg" class="${properties.kcBodyClass!}">
 <div class="${properties.kcLoginClass!}">
     <div id="kc-header" class="${properties.kcHeaderClass!}">
         <div id="kc-header-wrapper"
