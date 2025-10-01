@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="${locale}">
+<html lang="en">
     <head>
         <title>${msg("accountManagementTitle")}</title>
 
