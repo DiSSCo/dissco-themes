@@ -73,7 +73,7 @@
             link.setAttribute("aria-disabled", "true");
         });
     </script>
-    <#if authenticationSession??>
+    <#--  <#if authenticationSession??>
         <script type="module">
             import { checkAuthSession } from "${url.resourcesPath}/js/authChecker.js";
 
@@ -81,7 +81,7 @@
                 "${authenticationSession.authSessionIdHash}"
             );
         </script>
-    </#if>
+    </#if>  -->
 </head>
 
 <body id="keycloak-bg" class="${properties.kcBodyClass!}">
