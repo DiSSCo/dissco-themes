@@ -113,8 +113,11 @@ hr {
 
 /* Social providers */
 .social-provider-item {
-    border: 1px solid black;
+    border: 1px solid lightgrey;
     color: black;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
 }
 
 .social-provider-item:hover {
@@ -123,6 +126,10 @@ hr {
     box-shadow:inset 0px 0px 0px 1px #4d59a2;
     border: 1px solid #4d59a2;
     color: #4d59a2 !important;
+}
+
+#social-provider-container {
+    margin: 20px;
 }
 
 /* Static pages */
@@ -161,4 +168,23 @@ p, li {
 
 header {
     padding-top: 50px;
+}
+
+#kc-form-options span {
+    display: block;
+}
+
+#kc-form-options .checkbox {
+    margin-top: 0;
+    color: #72767b;
+}
+
+#kc-form-buttons {
+    margin-top: 20px;
+}
+
+#kc-content {
+    width: 500px;
+    text-align: center;
+    margin: auto;
 }
