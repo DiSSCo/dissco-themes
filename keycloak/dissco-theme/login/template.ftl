@@ -30,7 +30,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
-    <meta name="color-scheme" content="light${darkMode?then(' dark', '')}">
+    <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <#if properties.meta?has_content>
@@ -57,25 +57,6 @@
             }
         }
     </script>
-    <#if darkMode>
-      <script type="module" async blocking="render">
-          const DARK_MODE_CLASS = "${properties.kcDarkModeClass}";
-          const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-          updateDarkMode(mediaQuery.matches);
-          mediaQuery.addEventListener("change", (event) => updateDarkMode(event.matches));
-
-          function updateDarkMode(isEnabled) {
-            const { classList } = document.documentElement;
-
-            if (isEnabled) {
-              classList.add(DARK_MODE_CLASS);
-            } else {
-              classList.remove(DARK_MODE_CLASS);
-            }
-          }
-      </script>
-    </#if>
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
             <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>

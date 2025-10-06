@@ -122,12 +122,6 @@ hr {
     height: var(--pf-v5-global--FontSize--xl);
 }
 
-@media (prefers-color-scheme: dark) {
-    #kc-social-providers svg:not(.google) {
-        filter: invert(54%) sepia(96%) saturate(2028%) hue-rotate(174deg) brightness(99%) contrast(97%);
-    }
-}
-
 @media (min-width: 768px) {
     div.pf-v5-c-login__main-header {
         grid-template-columns: 70% 30%;
