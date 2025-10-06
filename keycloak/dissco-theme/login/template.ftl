@@ -98,7 +98,7 @@
             link.setAttribute("aria-disabled", "true");
         });
     </script>
-    <#if authenticationSession??>
+    <#--  <#if authenticationSession??>
         <script type="module">
             import { checkAuthSession } from "${url.resourcesPath}/js/authChecker.js";
 
@@ -106,7 +106,7 @@
                 "${authenticationSession.authSessionIdHash}"
             );
         </script>
-    </#if>
+    </#if>  -->
     <script>
       // Workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=1404468
       const isFirefox = true;
