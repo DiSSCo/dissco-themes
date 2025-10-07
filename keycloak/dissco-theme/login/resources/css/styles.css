@@ -6,6 +6,18 @@
     --keycloak-card-top-color: var(--pf-v5-global--palette--blue-400);
 }
 
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+*{
+    color: black;
+    font-family: 'Montserrat', serif !important;
+}
+
 .pf-v5-c-login__container {
     grid-template-columns: 34rem;
     grid-template-areas: "header"
@@ -27,7 +39,7 @@
 /* Info section */
 
 .login-pf body {
-    background: var(--keycloak-bg-logo-url) no-repeat center center fixed;
+    background: white;
     background-size: cover;
     height: 100%;
 }
@@ -122,8 +134,73 @@ hr {
     height: var(--pf-v5-global--FontSize--xl);
 }
 
-@media (min-width: 768px) {
-    div.pf-v5-c-login__main-header {
-        grid-template-columns: 70% 30%;
+
+.pf-v5-c-login {
+    min-height: 92vh;
+}
+
+.pf-v5-c-login__header {
+    color: black;
+}
+
+#dissco-logo {
+    height: 200px;
+}
+#footer {
+    padding: 15px 200px;
+    display: flex;
+    justify-content: center;
+    font-size: .75rem;
+}
+
+#footer ul {
+    display: flex;
+}
+
+#footer ul li {
+    padding-right: 40px;
+    font-size: .75rem;
+}
+
+#footer ul li a {
+    color: #4d59a2;
+    text-decoration: none;
+}
+
+#footer ul li a:hover {
+    font-weight: 700;
+}
+
+/* Static pages */
+.static-page {
+    min-width: 320px;
+    max-width: 753px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 200px;
+}
+
+@media screen and (min-width: 992px) {
+    .static-page {
+        max-width: 753px;
+        margin-left: auto;
+        margin-right: auto;
     }
+  }
+
+
+@media screen and (min-width: 1300px) {
+    .static-page {
+        max-width: 1072px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
+
+h1, h2 {
+    font-weight: 400;
+}
+
+.dissco-logo {
+    height: 200px
 }

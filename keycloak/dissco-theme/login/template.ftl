@@ -117,8 +117,10 @@
 <div class="${properties.kcLogin!}">
   <div class="${properties.kcLoginContainer!}">
     <header id="kc-header" class="pf-v5-c-login__header">
-      <div id="kc-header-wrapper"
-              class="pf-v5-c-brand">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
+      <div id="kc-header-wrapper" class="pf-v5-c-brand">
+        <img src="${url.resourcesPath}/img/dissco-logo-high-res.png" id="dissco-logo" alt="dissco-logo" />
+        <p>${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</p>
+      </div>
     </header>
     <main class="${properties.kcLoginMain!}">
       <div class="${properties.kcLoginMainHeader!}">
@@ -239,6 +241,25 @@
     </main>
   </div>
 </div>
+<footer id="footer">
+    <ul>
+      <li>
+        <a href="${url.resourcesPath}/pages/privacy-static.html" target="_blank" rel="noreferrer">
+          <p className="fs-5">Privacy statement</p>
+        </a>
+      </li>
+      <li>
+        <a href="${url.resourcesPath}/pages/terms-static.html" target="_blank" rel="noreferrer">
+          <p className="fs-5">Terms of use</p>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:support@dissco.jitbit.com">
+          <p className="fs-5">Get support</p>
+        </a>
+      </li>
+    </ul>
+  </footer>
 </body>
 </html>
 </#macro>
