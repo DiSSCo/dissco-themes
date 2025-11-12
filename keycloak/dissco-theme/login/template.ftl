@@ -119,12 +119,11 @@
     <header id="kc-header" class="pf-v5-c-login__header">
       <div id="kc-header-wrapper" class="pf-v5-c-brand">
         <img src="${url.resourcesPath}/img/dissco-logo-high-res.png" id="dissco-logo" alt="dissco-logo" />
-        <p>${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</p>
       </div>
     </header>
     <main class="${properties.kcLoginMain!}">
       <div class="${properties.kcLoginMainHeader!}">
-        <h1 class="${properties.kcLoginMainTitle!}" id="kc-page-title"><#nested "header"></h1>
+        <h1 id="kc-page-title"><#nested "header"></h1>
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
         <div class="${properties.kcLoginMainHeaderUtilities!}">
           <div class="${properties.kcInputClass!}">
