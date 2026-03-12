@@ -7,15 +7,15 @@
 }
 
 @font-face {
-    font-family: 'Montserrat';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    src: url('../font/Montserrat-VariableFont_wght.ttf') format('truetype');
+    src: url('../font/Inter-VariableFont.ttf') format('truetype');
 }
 
 *{
     color: black;
-    font-family: 'Montserrat', serif !important;
+    font-family: 'Inter', serif !important;
 }
 
 .pf-v5-c-login__container {
@@ -193,6 +193,11 @@ h1, h2 {
     font-weight: 400;
 }
 
+h3 {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
 .dissco-logo {
     height: 200px
 }
@@ -201,4 +206,13 @@ h1, h2 {
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 25px;
+}
+
+#orcid-content a {
+    text-decoration: underline;
+    color: #0066CC;
+}
+
+#orcid-content p {
+    margin-bottom: 8px;
 }
