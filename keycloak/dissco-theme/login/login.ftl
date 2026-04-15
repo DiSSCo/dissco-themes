@@ -12,11 +12,4 @@
             <@identityProviders.show social=social/>
         </#if>
     </#if>
-    <#elseif section = "details" >
-        <div id="orcid-content">
-            <h3>Why sign in with ORCID?</h3>
-            <p>DiSSCover uses ORCID to provide a secure, single sign-on that connects your professional identity to your research activity. This ensures your work is accurately attributed and your preferences are saved across sessions.</p>
-            <a href="https://info.orcid.org/researchers/" target="_blank" rel="noreferrer">Learn more about ORCID</a>
-        </div>
-    </#if>
 </@layout.registrationLayout>
