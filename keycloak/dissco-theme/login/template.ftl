@@ -223,7 +223,6 @@
 
           <div class="${properties.kcLoginMainFooter!}">
               <#nested "socialProviders">
-              <#nested "details">
 
               <#if displayInfo>
                   <div id="kc-info" class="${properties.kcLoginMainFooterBand!} ${properties.kcFormClass}">
